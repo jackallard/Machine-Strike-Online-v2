@@ -189,4 +189,4 @@ function saveToFile(playerNum, roomName, state) {
   });
 }
 
-io.listen(3000); //using port 3000
+io.listen(process.env.PORT || 8080); //using port 8080

@@ -50,7 +50,7 @@ changeColourButton.addEventListener("click", () => {
   colourIndex++;
 });
 
-const socket = io('http://localhost:3000'); //using socket.io
+const socket = io('https://intense-scrubland-55179-e71a97bf4b44.herokuapp.com/'); //using socket.io
 
 socket.on('initialisation', handleInitialisation);
 socket.on("stateGame", handleStateGame);

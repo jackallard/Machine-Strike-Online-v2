@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Machine Strike Online</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+  integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="resources/fonts/horizonstylesheet.css" type="text/css" charset="UTF-8" >
+
+<style>
+#gameDisplay {
+  display: none;
+}
+body {
+  font-family: 'horizonmedium';
+  text-align: center;
+}
+#menuVideo {
+  position: fixed;
+  width: 960px;
+  height: 540px;
+}
+#h1 {
+  text-align: center;
+}
+#p {
+  text-align: center;
+}
+#div {
+  text-align: center;
+}
+</style>
+
+</head>
+<body>
+  <body id="body">
+  <section class="vh-100">
+    <div class="container h-100">
+      <div id="mainDisplay" class="h-100">
+        <div class = "d-flex flex-column aligh-items-center justify-content-center h-100 w-100">
+          <!-- <video autoplay muted loop id="menuVideo">
+            <source src="./resources/hfwmovie.mp4" type="video/mp4">
+          </video> -->
+          <img src="./resources/hfwlogo.png" img>
+          <h1> Machine Strike Online </h1>
+          <div>Nickname:</div>
+          <div class = "form-group">
+            <input type="text" placeholder="Enter Nickname" id="enterNickname"
+            required maxlength = "15"
+            required minlength = "1" />
+          </div>
+          <div>Room code:</div>
+          <div class = "form-group">
+            <input type="text" placeholder="Enter Game Code" id="enterGameCode"
+            required maxlength="4"
+            required minlength="2" />
+          </div>
+          <button
+            type="submit"
+            class="btn btn-success"
+            id="joinGameButton"
+            onsubmit="return validate()"
+          >
+            Join Game
+          </button>
+          <div> Or: </div>
+          <button
+            type="submit"
+            class="btn btn-success"
+            id="newGameButton"
+            onsubmit="return validate()"
+            >
+              Generate New Room Code
+            </button>
+            <div> Customise: </div>
+          <button id="changeColourButton">
+            Change Colour
+          </button>
+
+        </div>
+      </div>
+
+      <div id="gameDisplay" class="h-100">
+        <div class="d-flex flex-column align-items-center justify-content-center h-100">
+          <h1> <span id="userNameDisplay"> </span> </h1>
+          <h1>Generated room code: <span id="roomCodeDisplay"></span></h1>
+          <canvas id="gameCanvas"></canvas>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- importing socket.io, index.js !-->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.1/socket.io.min.js"></script>
+  <script src="index.js"></script>
+  <script src="https://nodejs.org/api/fs.html"></script>
+
+   <script>
+    var colours = ["red", "blue", "green"];
+    var colourIndex = 0;
+
+    function changeColour() {
+      var col = document.getElementById("body");
+      if (colourIndex >= colours.length) {
+        colourIndex = 0;
+      }
+      col.style.backgroundColor = colours[colourIndex];
+      colourIndex++;
+    }
+    </script>
+
+</body>
+</html>

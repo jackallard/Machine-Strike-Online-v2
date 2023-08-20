@@ -10,10 +10,12 @@ Technology Stack:
 
 Decide on the technology stack you want to use for your online game. This may include HTML/CSS for the user interface, JavaScript for client-side scripting, and a back-end technology (such as Node.js, Python, or Ruby) for handling game logic and server-side operations.
 Research and choose any additional frameworks or libraries that can assist you in developing the game.
+
 User Interface:
 
 Design and implement the user interface for the online game using HTML/CSS. Consider the layout, visual elements, and interactions required to provide a seamless gameplay experience.
 Implement the necessary components, such as the game board, player pieces, cards, and any other game-specific elements.
+
 Game Logic:
 
 Implement the game logic using JavaScript or the chosen client-side scripting language. This includes handling player turns, movement, combat, and any other rules and mechanics of the game.
@@ -57,8 +59,6 @@ Basically machine strike logic implementation in TS based on the machine strike 
 
 ![Machine strike](./demo.png)
 
-Link to fonts: 
-
 
 Notes from me:
 
@@ -69,6 +69,14 @@ Notes from me:
 3. Add two symbols for player 1 and player 2, including whether they've readied up, dc'd etc
 
 4. Add a (live) controls prompt on the side (or bottom!)
+
+5. Have a goal of having the game be progression based, where you can unlock additional pieces as the games go on, either through a level-progression system or through challenges, or both!
+
+6. All bonuses/abilities are going to be programmed later such that a simple function with if statements can be called at the start of each turn/attack, etc
+
+7. 
+
+
 
 
 

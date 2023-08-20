@@ -73,7 +73,7 @@
       "type_Of_Front": 3,
       "type_Of_Back": 2,
       "type_Of_Left_Side": 1,
-      "type_Of_Right_Side": 1,,
+      "type_Of_Right_Side": 1,
       "Ability": "None"
     },
     {
@@ -524,7 +524,7 @@
       "type_Of_Back": 1,
       "type_Of_Left_Side": 3,
       "type_Of_Right_Side": 3,
-      "Ability": "None",
+      "Ability": "None"
     },
     {
       "name": "Stormbird",

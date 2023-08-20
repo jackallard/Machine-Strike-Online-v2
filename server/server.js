@@ -1,7 +1,7 @@
 const msg = "debug";
 const io = require("socket.io")({ //establishing socket.io, server object
   cors: {
-    origin: "http://127.0.0.1:8080", //establishing
+    origin: process.env.PORT, //establishing
   }
 });
 const fs = require('fs');

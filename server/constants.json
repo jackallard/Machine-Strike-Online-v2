@@ -1,5 +1,3 @@
-// JSON object file for all strike pieces, plus a string description of their ability for future reference //
-
 { 
   "object_Type": "Machine Strike Pieces",
   "pieces": [

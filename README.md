@@ -1,1 +1,1 @@
-﻿# Machine Strie Online v2
+﻿# Machine Strike Online v2

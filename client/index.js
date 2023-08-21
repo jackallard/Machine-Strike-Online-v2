@@ -26,7 +26,7 @@ function confirmRandom() {
   document.getElementById("confirm").hidden=true;
   alert("Board will be randomised. Just like the original!");
   socket.emit("createNewRandomGame");
-  initialisation;
+  initialisation();
 }
 
 function confirmSymmetrical() {
@@ -34,7 +34,7 @@ function confirmSymmetrical() {
   document.getElementById("confirm").hidden=true;
   alert("Board will be symmetrical. A respectable fairness!")
   socket.emit("createNewSymmetricalGame");
-  initialisation;
+  initialisation();
 }
 
 function joinNewGame() { //""

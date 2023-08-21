@@ -137,7 +137,7 @@ function handleInitialisation(number, gameState) {
   gameCanvas = document.getElementById('gameCanvas'); //using the ID to link to the html
   ctx = gameCanvas.getContext('2d');
 
-  drawBoard(gameCanvas, ctx, stateGame)
+  drawBoard(gameCanvas, ctx, gameState)
 }
 
 function drawBoard(gameCanvas, ctx, gameState) {

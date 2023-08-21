@@ -13,8 +13,8 @@ let userBoardChoice;
 newGameButton.addEventListener("click", createNewGame); //button event listeners
 joinGameButton.addEventListener("click", joinNewGame);
 
-function createNewGame() { //create/join new game from event listener
-  socket.emit("createNewGame");
+function createNewGame() {
+  boardChoice(); //create/join new game from event listener
   initialisation();
 }
 
@@ -26,12 +26,14 @@ function confirmRandom() {
   randomiseBoard="true";
   document.getElementById("confirm").hidden=true;
   alert("Board will be randomised. Just like the original.");
+  socket.emit("createNewRandomGame");
 }
 
 function confirmSymmetrical() {
   randomiseBoard="false";
   document.getElementById("confirm").hidden=true;
   alert("Board will be symmetrical. A respectable fairness.")
+  socket.emit("createNewSymmetricalGame");
 }
 
 function joinNewGame() { //""

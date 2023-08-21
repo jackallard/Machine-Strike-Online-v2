@@ -4,29 +4,62 @@ module.exports = {
   createStateGame: createStateGame,
   loopGame: loopGame,
   getUpdatedSpeed: getUpdatedSpeed,
+  generateBoard: generateBoard,
+}
+
+function getRandomInt(min,max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min) + min);
+}
+
+function generateBoard(if_Randomise) {
+  var board=[
+    [0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0],
+  ];
+  if (if_Randomise === "random") {
+    for (i=0; i<board.length;i++){
+      for (j=0; j<board.length;j++){
+        board[i][j] = getRandomInt(-2,4);
+      }
+    }
+  }
+else {
+  for (i=0;i<8;i++){
+    for (j=0;j<4;j++){
+      board[i][j] = getRandomInt(-2,4);
+    }
+  }
+  for (i=0;i<8;i++){
+    for (j=0;j<4;j++){
+      board[7-i][7-j] = board[i][j]
+    }
+  }
+  }
+  console.log(board);
+  return board;
 }
 
 function createStateGame() {
   return {   //establishing the game state - includes the definitions of the key variables
-    players: [],   //the player object stores the data for each snake, such as its position],
-    foodPos1: { //stores what grid space the food is in
-      x: 10,
-      y: 10,
-    },
-    foodPos2: {
-      x: 3,
-      y: 18
-    },
-    abilityPos: { //stores what grid space the bonus ability to pick up is in
-      x: 1,
-      y: 19,
-    },
-    gridSize: 20,
+    players: [],   //the player object stores the data for each player, such as the status of machine pieces, number of victory points etc
+    gridSize: 8,
     time: 0,
+    turns: 0,
+    isPlayerOneTurn: false,
+    isPlayerTwoTurn: false,
     active: true,
   };
 }
 
+//this all needs to be changed at a later date to a turn system
 function loopGame(stateGame) {
   if (!stateGame) { //checking that the game exists and is running
     return; //do not increment the time - the game is no longer in play

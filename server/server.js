@@ -6,6 +6,7 @@ const io = require("socket.io")({ //establishing socket.io, server object
 });
 const fs = require('fs');
 
+
 //importing from other files
 const { move_Delay } = require("./constants");
 const { createStateGame } = require("./gamelogic");
@@ -42,7 +43,8 @@ io.on("connection", client => { //establishing the client object
      }
   }
 
-  client.on("createNewGame", handleCreateNewGame);
+  client.on("createNewRandomGame", handleCreateNewRandomGame);
+  client.on("createNewSymmetricalGame", handleCreateNewSymmetricalGame);
   client.on("joinNewGame", handleJoinNewGame);
 
   function makeid(length) {
@@ -55,7 +57,7 @@ io.on("connection", client => { //establishing the client object
     return result;
   }
 
-  function handleCreateNewGame() {
+  function handleCreateNewRandomGame() {
     let roomName = makeid(2); //roomName is a random 2-digit number
     roomLookup[client.id] = roomName;
     client.emit("roomCode", roomName);
@@ -68,7 +70,27 @@ io.on("connection", client => { //establishing the client object
       //the player object stores the data for each player, such as its machines and their relevant positions
       playerScore: 0, //number of victory points
       playerMachines: {},
-          })
+          });
+
+    client.join(roomName);
+    client.number = 1;
+    client.emit("initialisation", 1, roomName);
+  }
+
+  function handleCreateNewSymmetricalGame() {
+    let roomName = makeid(2); //roomName is a random 2-digit number
+    roomLookup[client.id] = roomName;
+    client.emit("roomCode", roomName);
+
+    console.log("created", roomName);
+    console.log("---");
+    stateGame[roomName] = createStateGame();
+    console.log(stateGame);
+    stateGame[roomName].players.push({  //adds the new player onto the array of all players
+      //the player object stores the data for each player, such as its machines and their relevant positions
+      playerScore: 0, //number of victory points
+      playerMachines: {},
+          });
 
     client.join(roomName);
     client.number = 1;

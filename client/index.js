@@ -24,15 +24,17 @@ function boardChoice() {
 function confirmRandom() {
   randomiseBoard="true";
   document.getElementById("confirm").hidden=true;
-  alert("Board will be randomised. Just like the original.");
+  alert("Board will be randomised. Just like the original!");
   socket.emit("createNewRandomGame");
+  initialisation;
 }
 
 function confirmSymmetrical() {
   randomiseBoard="false";
   document.getElementById("confirm").hidden=true;
-  alert("Board will be symmetrical. A respectable fairness.")
+  alert("Board will be symmetrical. A respectable fairness!")
   socket.emit("createNewSymmetricalGame");
+  initialisation;
 }
 
 function joinNewGame() { //""

@@ -55,16 +55,12 @@ Basically machine strike logic implementation in TS based on the machine strike 
 - player interaction
 - ...
 
-## Current state
-
-![Machine strike](./demo.png)
-
 
 Notes from me:
 
 1. I need to handle changes between the init of the snake/machine strike game. Changes include the different board size and generation, changing the game state to be in turns, and pretty much implementing everything from matey's typescript
 
-2. Have a separate file with all of the stats of each machine strike piece
+2. Have a separate file with all of the stats of each machine strike piece - DONE!
 
 3. Add two symbols for player 1 and player 2, including whether they've readied up, dc'd etc
 
@@ -74,9 +70,9 @@ Notes from me:
 
 6. All bonuses/abilities are going to be programmed later such that a simple function with if statements can be called at the start of each turn/attack, etc
 
-7. 
+7. Refer to machine.ts for placing and instantiation of machines
 
-
+8. Following the last article from yesterday, add a prompt where a choice is made when people either create or join a game. This result is fed through the server init functionality
 
 
 

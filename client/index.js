@@ -75,8 +75,8 @@ function initialisation() {
   gameCanvas = document.getElementById('gameCanvas'); //using the ID to link to the html
   ctx = gameCanvas.getContext('2d');
 
-  gameCanvas.height = 800;
-  gameCanvas.width = 800; //setting the canvas pixel sizes
+  gameCanvas.height = 1200;
+  gameCanvas.width = 1200; //setting the canvas pixel sizes
 
   ctx.fillStyle = gridColour; //filling in the canvas
   ctx.fillRect(0,0, gameCanvas.width, gameCanvas.height);

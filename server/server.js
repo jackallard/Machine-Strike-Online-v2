@@ -65,22 +65,10 @@ io.on("connection", client => { //establishing the client object
     stateGame[roomName] = createStateGame();
     console.log(stateGame);
     stateGame[roomName].players.push({  //adds the new player onto the array of all players
-      //the player object stores the data for each snake, such as its position
-      playerScore: 0, //number of times the snake has eaten
-      playerPos: {
-        x: 2,
-        y: 10,
-      },
-      speed: { //the direction in which the snake is moving instantaneously - changes due to inputs
-        x: 1,
-        y: 0,
-      },
-      snakeArray: [  //stores what positions the whole snake is in
-        {x: 1, y: 10},
-        {x: 2, y: 10},
-      ],
-      hasBonusAbility: false, //stores whether the snake has the bonus ability
-    });
+      //the player object stores the data for each player, such as its machines and their relevant positions
+      playerScore: 0, //number of victory points
+      playerMachines: {},
+          })
 
     client.join(roomName);
     client.number = 1;
@@ -115,20 +103,9 @@ io.on("connection", client => { //establishing the client object
                                      //and assigns the room name to the client
 
     stateGame[roomName].players.push({   //the player object stores the data for each snake, such as its position
-      playerScore: 0, //number of times the snake has eaten
-      playerPos: {
-        x: 18,
-        y: 10,
-      },
-      speed: { //the direction in which the snake is moving instantaneously - changes due to inputs
-        x: -1,
-        y: 0,
-      },
-      snakeArray: [  //stores what positions the whole snake is in
-        {x: 19, y: 10},
-        {x: 18, y: 10},
-      ],
-      hasBonusAbility: false, //stores whether the snake has the bonus ability
+      playerScore: 0, //number of victory points
+      playerMachines: {},
+      
     })
     client.join(roomName);
     client.number = 2;

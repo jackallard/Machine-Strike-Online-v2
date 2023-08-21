@@ -8,12 +8,30 @@ const roomCodeDisplay = document.getElementById("roomCodeDisplay");
 const userNameDisplay = document.getElementById("userNameDisplay");
 const nickNameInput = document.getElementById("enterNickname");
 
+let userBoardChoice;
+
 newGameButton.addEventListener("click", createNewGame); //button event listeners
 joinGameButton.addEventListener("click", joinNewGame);
 
 function createNewGame() { //create/join new game from event listener
   socket.emit("createNewGame");
   initialisation();
+}
+
+function boardChoice() {
+  document.getElementById("confirm").hidden=false
+}
+
+function confirmRandom() {
+  randomiseBoard="true";
+  document.getElementById("confirm").hidden=true;
+  alert("Board will be randomised. Just like the original.");
+}
+
+function confirmSymmetrical() {
+  randomiseBoard="false";
+  document.getElementById("confirm").hidden=true;
+  alert("Board will be symmetrical. A respectable fairness.")
 }
 
 function joinNewGame() { //""

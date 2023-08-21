@@ -76,10 +76,17 @@
             type="submit"
             class="btn btn-success"
             id="newGameButton"
+            onclick="boardChoice()"
             onsubmit="return validate()"
             >
               Generate New Room Code
             </button>
+            <div id="confirm" hidden>
+              <p>Generate board randomly or symmetrically?</p>
+              <button onclick="confirmRandom()">Random</button>
+              <button onclick="confirmSymmetrical()">Symmetrical</button>
+              </button>
+            </div>
             <div> Customise: </div>
           <button id="changeColourButton">
             Change Colour

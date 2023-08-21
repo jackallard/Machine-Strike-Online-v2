@@ -74,7 +74,7 @@ io.on("connection", client => { //establishing the client object
 
     client.join(roomName);
     client.number = 1;
-    client.emit("initialisation", 1, roomName);
+    client.emit("initialisation", 1, roomName, stateGame);
   }
 
   function handleCreateNewSymmetricalGame() {
@@ -94,7 +94,7 @@ io.on("connection", client => { //establishing the client object
 
     client.join(roomName);
     client.number = 1;
-    client.emit("initialisation", 1, roomName);
+    client.emit("initialisation", 1, roomName, stateGame);
   }
 
   function handleJoinNewGame(roomName) {
@@ -131,10 +131,10 @@ io.on("connection", client => { //establishing the client object
     })
     client.join(roomName);
     client.number = 2;
-    client.emit("initialisation", 2, roomName);
+    client.emit("initialisation", 2, roomName, stateGame);
     console.log(room);
 
-    startGameInterval(stateGame, roomName); //the game can now be started as both players are now in the room
+    //startGameInterval(stateGame, roomName); //the game can now be started as both players are now in the room
                         //only the roomName
 
     //all of these steps are similar to the creation of the room, however when joining

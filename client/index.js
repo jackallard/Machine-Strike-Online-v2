@@ -26,7 +26,6 @@ function confirmRandom() {
   document.getElementById("confirm").hidden=true;
   alert("Board will be randomised. Just like the original!");
   socket.emit("createNewRandomGame");
-  initialisation();
 }
 
 function confirmSymmetrical() {
@@ -34,14 +33,12 @@ function confirmSymmetrical() {
   document.getElementById("confirm").hidden=true;
   alert("Board will be symmetrical. A respectable fairness!")
   socket.emit("createNewSymmetricalGame");
-  initialisation();
 }
 
 function joinNewGame() { //""
   const gameCode = enterGameCode.value;
   console.log(gameCode);
   socket.emit("joinNewGame", String(gameCode));
-  initialisation();
 }
 
 //Setting the basic colours//
@@ -51,11 +48,13 @@ const backgroundColour3 = '#eeee99';
 const backgroundColour4 = '#39BFBF';
 const backgroundColour5 = '#9F3EE0';
 const backgroundColour6 = '#FFFFFF';
-const gridColour = '#585858';
-const snakeColour1 = '#00BFFF';
-const snakeColour2 = "#00FFBB";
-const foodColour = '#DC143C';
-const abilityColour = '#D2691E';
+const chasmColour = '#644029';
+const marshColour = '#239d92';
+const grasslandColour = '#a7c35f';
+const forestColour = '#5f854f';
+const hillColour = '#5b4e45';
+const mountainColour = '#b8b0ab';
+const tileBorderColour = '#788163';
 
 //changing the background colour//
 var colours = [backgroundColour1, backgroundColour2, backgroundColour3,
@@ -85,23 +84,6 @@ let gameCanvas; //initialising the client variables which will be used
 let ctx;
 let playerNum; //playerNum needs to be global
 let isGameActive = false;
-
-function initialisation() {
-  isGameActive = true;
-  mainDisplay.style.display = "none";
-  gameDisplay.style.display = "block";
-
-  document.addEventListener("keydown", keyDown);
-
-  gameCanvas = document.getElementById('gameCanvas'); //using the ID to link to the html
-  ctx = gameCanvas.getContext('2d');
-
-  gameCanvas.height = 1200;
-  gameCanvas.width = 1200; //setting the canvas pixel sizes
-
-  ctx.fillStyle = gridColour; //filling in the canvas
-  ctx.fillRect(0,0, gameCanvas.width, gameCanvas.height);
-}
 
 function keyDown(keyStroke) { //input keypresses to the server
   socket.emit("keyDown", keyStroke.code)
@@ -141,11 +123,45 @@ function renderSnake(snakeState, pixelsPerSquare, snakeColour) { //rendering the
   }
 }
 
-function handleInitialisation(number) {
+function handleInitialisation(number, gameState) {
   userNameDisplay.innerText = String(enterNickname.value);
   console.log("Handle initialisation received");
   playerNum = number;
+
+  isGameActive = true;
+  mainDisplay.style.display = "none";
+  gameDisplay.style.display = "block";
+
+  document.addEventListener("keydown", keyDown);
+
+  gameCanvas = document.getElementById('gameCanvas'); //using the ID to link to the html
+  ctx = gameCanvas.getContext('2d');
+
+  drawBoard(gameCanvas, ctx, stateGame)
 }
+
+function drawBoard(gameCanvas, ctx, gameState) {
+  gameCanvas.height = 1000;
+  gameCanvas.width = 1000;
+
+  ctx.beginPath();
+
+  ctx.lineWidth = 1;
+  ctx.strokeStyle = tileBorderColour; 
+
+  for (var x=0; x<=1000; x+=10) {
+    ctx.moveTo(x,0);
+    ctx.lineTo(x,1000);
+  }
+
+  for (var y=0;y<=1000;y+=10) {
+    ctx.moveTo(0,y);
+    ctx.lineTo(1000,y);
+  }
+  ctx.stroke();
+}
+
+
 function handleStateGame(gameState) { //when it receives a new game state
   if (!isGameActive) {
     return;

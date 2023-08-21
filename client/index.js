@@ -13,9 +13,8 @@ let userBoardChoice;
 newGameButton.addEventListener("click", createNewGame); //button event listeners
 joinGameButton.addEventListener("click", joinNewGame);
 
-function createNewGame() {
-  boardChoice(); //create/join new game from event listener
-  initialisation();
+function createNewGame() { //create/join new game from event listener
+  boardChoice();
 }
 
 function boardChoice() {

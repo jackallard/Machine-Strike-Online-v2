@@ -134,10 +134,10 @@ function handleInitialisation(number, gameState) {
 
   document.addEventListener("keydown", keyDown);
 
-  gameCanvas = document.getElementById('gameCanvas'); //using the ID to link to the html
-  ctx = gameCanvas.getContext('2d');
+  canvas = document.getElementById('gameCanvas'); //using the ID to link to the html
+  ctx = canvas.getContext('2d');
 
-  drawBoard(gameCanvas, ctx, gameState);
+  drawBoard(canvas, ctx, gameState);
 }
 
 //setting up the canvas and drawing the game board
@@ -158,7 +158,7 @@ function getTerrainImageFromBoardNumber(numStr) {
 }
 
 
-function drawBoard(gameCanvas, ctx, gameState) {
+function drawBoard(canvas, ctx, gameState) {
   //clear canvas
   //2d for loop
 

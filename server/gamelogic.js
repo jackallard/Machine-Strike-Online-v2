@@ -47,7 +47,7 @@ else {
   return board;
 }
 
-function createStateGame() {
+function createStateGame(if_Randomise) {
   return {   //establishing the game state - includes the definitions of the key variables
     players: [],   //the player object stores the data for each player, such as the status of machine pieces, number of victory points etc
     gridSize: 8,
@@ -56,6 +56,7 @@ function createStateGame() {
     isPlayerOneTurn: false,
     isPlayerTwoTurn: false,
     active: true,
+    gameBoard: generateBoard(if_Randomise),
   };
 }
 

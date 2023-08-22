@@ -137,28 +137,46 @@ function handleInitialisation(number, gameState) {
   gameCanvas = document.getElementById('gameCanvas'); //using the ID to link to the html
   ctx = gameCanvas.getContext('2d');
 
-  drawBoard(gameCanvas, ctx, gameState)
+  drawBoard(gameCanvas, ctx, gameState);
 }
 
+//setting up the canvas and drawing the game board
+
+function getTerrainImageFromBoardNumber(numStr) {
+  number_To_Image = {
+    '-2': 'resources/chasm_tile.png',
+    '-1': 'resources/marsh_tile2.png',
+    '0': 'resources/grassland_tiles.png',
+    '1': 'resources/forest_tile.png',
+    '2': 'resources/hill_tile.png',
+    '3': 'resources/mountain_tile.png'
+  }
+
+  const myImage = new Image();
+  myImage.src = number_To_Image[numStr.toString()];
+  return myImage;
+}
+
+
 function drawBoard(gameCanvas, ctx, gameState) {
-  gameCanvas.height = 1000;
-  gameCanvas.width = 1000;
+  //clear canvas
+  //2d for loop
 
-  ctx.beginPath();
-
-  ctx.lineWidth = 1;
-  ctx.strokeStyle = tileBorderColour; 
-
-  for (var x=0; x<=1000; x+=10) {
-    ctx.moveTo(x,0);
-    ctx.lineTo(x,1000);
+  board = gameState.gameBoard;
+  w = canvas.width;
+  h = canvas.height;
+  tile_w = w/8;
+  h = canvas.height;
+  ctx.clearRect(0,0,w,h);
+  for (let x=0; x<8; x++) {
+    for (let y = 0; y<8; y++) {
+      terrain_Image = getTerrainImageFromBoardNumber(board[x][y]);
+      ctx.drawImage(terrain_Image, x*tile_w, y*tile_h, tile_w, tile_h);
+    }
   }
+  //draw the grid lines if wanted
+  //maybe include board pieces within this function (bcos I initially had rendergame).. some merging might be required!
 
-  for (var y=0;y<=1000;y+=10) {
-    ctx.moveTo(0,y);
-    ctx.lineTo(1000,y);
-  }
-  ctx.stroke();
 }
 
 

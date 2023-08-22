@@ -64,7 +64,7 @@ io.on("connection", client => { //establishing the client object
 
     console.log("created", roomName);
     console.log("---");
-    stateGame[roomName] = createStateGame();
+    stateGame[roomName] = createStateGame("random");
     console.log(stateGame);
     stateGame[roomName].players.push({  //adds the new player onto the array of all players
       //the player object stores the data for each player, such as its machines and their relevant positions
@@ -84,7 +84,7 @@ io.on("connection", client => { //establishing the client object
 
     console.log("created", roomName);
     console.log("---");
-    stateGame[roomName] = createStateGame();
+    stateGame[roomName] = createStateGame("symmetrical");
     console.log(stateGame);
     stateGame[roomName].players.push({  //adds the new player onto the array of all players
       //the player object stores the data for each player, such as its machines and their relevant positions

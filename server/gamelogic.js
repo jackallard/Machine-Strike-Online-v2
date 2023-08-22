@@ -14,6 +14,7 @@ function getRandomInt(min,max) {
 }
 
 function generateBoard(if_Randomise) {
+  console.log("starting board randomisation");
   var board=[
     [0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0],

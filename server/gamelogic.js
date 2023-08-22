@@ -13,6 +13,19 @@ function getRandomInt(min,max) {
   return Math.floor(Math.random() * (max - min) + min);
 }
 
+function createStateGame(if_Randomise) {
+  return {   //establishing the game state - includes the definitions of the key variables
+    players: [],   //the player object stores the data for each player, such as the status of machine pieces, number of victory points etc
+    gridSize: 8,
+    time: 0,
+    turns: 0,
+    isPlayerOneTurn: false,
+    isPlayerTwoTurn: false,
+    active: true,
+    gameBoard: generateBoard(if_Randomise),
+  };
+}
+
 function generateBoard(if_Randomise) {
   console.log("starting board randomisation");
   var board=[
@@ -46,19 +59,6 @@ else {
   }
   console.log(board);
   return board;
-}
-
-function createStateGame(if_Randomise) {
-  return {   //establishing the game state - includes the definitions of the key variables
-    players: [],   //the player object stores the data for each player, such as the status of machine pieces, number of victory points etc
-    gridSize: 8,
-    time: 0,
-    turns: 0,
-    isPlayerOneTurn: false,
-    isPlayerTwoTurn: false,
-    active: true,
-    gameBoard: generateBoard(if_Randomise),
-  };
 }
 
 //this all needs to be changed at a later date to a turn system

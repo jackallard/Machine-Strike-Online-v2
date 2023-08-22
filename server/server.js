@@ -58,6 +58,7 @@ io.on("connection", client => { //establishing the client object
   }
 
   function handleCreateNewRandomGame() {
+    console.log("trying to create new random game");
     let roomName = makeid(2); //roomName is a random 2-digit number
     roomLookup[client.id] = roomName;
     client.emit("roomCode", roomName);

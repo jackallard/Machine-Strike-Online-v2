@@ -37,7 +37,7 @@ function generateBoard(if_Randomise) {
     [0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0]
   ];
   if (if_Randomise === "random") {
     for (i=0; i<board.length;i++){

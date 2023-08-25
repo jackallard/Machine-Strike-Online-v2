@@ -11,7 +11,6 @@ const fs = require('fs');
 const { move_Delay } = require("./constants");
 const { createStateGame } = require("./gamelogic");
 const { loopGame } = require("./gamelogic");
-const { getUpdatedSpeed } = require("./gamelogic");
 
 const stateGame = {};
 const roomLookup = {};
@@ -76,6 +75,7 @@ io.on("connection", client => { //establishing the client object
     client.join(roomName);
     client.number = 1;
     client.emit("initialisation", 1, roomName, stateGame);
+    console.log("emitted to client to start init");
   }
 
   function handleCreateNewSymmetricalGame() {

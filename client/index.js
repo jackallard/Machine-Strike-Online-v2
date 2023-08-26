@@ -102,14 +102,14 @@ function renderGame(state) { //painting the game state
 
   //food #1
   ctx.fillStyle = foodColour; //rendering the food square
-  ctx.fillRect(foodPos1.x * pixelsPerSquare, foodPos1.y * pixelsPerSquare, pixelsPerSquare, pixelsPerSquare)
+  ctx.fillRect(foodPos1.x * pixelsPerSquare, foodPos1.y * pixelsPerSquare, pixelsPerSquare, pixelsPerSquare);
 
   //food #2
   ctx.fillStyle = foodColour;
-  ctx.fillRect(foodPos2.x * pixelsPerSquare, foodPos2.y * pixelsPerSquare, pixelsPerSquare, pixelsPerSquare)
+  ctx.fillRect(foodPos2.x * pixelsPerSquare, foodPos2.y * pixelsPerSquare, pixelsPerSquare, pixelsPerSquare);
 
   ctx.fillStyle = abilityColour; //rendering the bonus ability square
-  ctx.fillRect(abilityPos.x * pixelsPerSquare, abilityPos.y * pixelsPerSquare, pixelsPerSquare, pixelsPerSquare)
+  ctx.fillRect(abilityPos.x * pixelsPerSquare, abilityPos.y * pixelsPerSquare, pixelsPerSquare, pixelsPerSquare);
 
   renderSnake(state.players[0], pixelsPerSquare, snakeColour1); //rendering the player position
   renderSnake(state.players[1], pixelsPerSquare, snakeColour2);

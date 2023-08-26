@@ -29,7 +29,7 @@ function createStateGame(if_Randomise) {
 
 function generateBoard(if_Randomise) {
   console.log("starting board randomisation");
-  const board=[
+  const gameBoard=[
     [0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0],
@@ -40,26 +40,26 @@ function generateBoard(if_Randomise) {
     [0, 0, 0, 0, 0, 0, 0, 0]
   ];
   if (if_Randomise === "random") {
-    for (i=0; i<board.length;i++){
-      for (j=0; j<board.length;j++){
+    for (i=0; i<gameBoard.length;i++){
+      for (j=0; j<gameBoard.length;j++){
         board[i][j] = getRandomInt(-2,4);
       }
     }
   }
 else {
   for (i=0;i<8;i++){
-    for (j=0;j<4;j++){
-      board[i][j] = getRandomInt(-2,4);
+    for (j=0;j<4;j++){  
+      gameBoard[i][j] = getRandomInt(-2,4);
     }
   }
   for (i=0;i<8;i++){
     for (j=0;j<4;j++){
-      board[7-i][7-j] = board[i][j]
+      gameBoard[7-i][7-j] = gameBoard[i][j]
     }
   }
   }
-  console.log(board);
-  return board;
+  console.log(gameBoard);
+  return gameBoard;
 }
 
 //this all needs to be changed at a later date to a turn system

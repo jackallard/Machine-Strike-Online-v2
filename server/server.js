@@ -189,4 +189,4 @@ function saveToFile(playerNum, roomName, state) {
   });
 }
 
-io.listen(process.env.PORT || 8080); //using heroku's dynamic ports 
+io.listen(process.env.PORT); //using heroku's dynamic ports 

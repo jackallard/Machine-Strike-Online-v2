@@ -133,6 +133,7 @@ io.on("connection", client => { //establishing the client object
     })
     client.join(roomName);
     client.number = 2;
+    //io.sockets.in(roomName).emit("board", JSON.stringify(state));
     client.emit("initialisation", 2, roomName, stateGame);
     console.log(room);
 

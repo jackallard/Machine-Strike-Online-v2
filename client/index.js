@@ -125,7 +125,7 @@ function renderSnake(snakeState, pixelsPerSquare, snakeColour) { //rendering the
 }
 
 function handleInitialisation(number, gameState) {
-  console.log(gameState.gameBoard);
+  console.log(gameState.gameBoard[1,1]);
   userNameDisplay.innerText = String(enterNickname.value);
   console.log("Handle initialisation received");
   playerNum = number;

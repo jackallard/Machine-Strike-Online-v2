@@ -34,12 +34,13 @@ io.on("connection", client => { //establishing the client object
     }
 
     keyCode = (keyCode);
-    const speed = getUpdatedSpeed(stateGame[roomName], keyCode, client);
-    console.log(speed);
-    if (speed) { //if the speed exists
-      stateGame[roomName].players[client.number-1].speed = speed;
+    //this is where I need to put the inputs
+    //const speed = getUpdatedSpeed(stateGame[roomName], keyCode, client);
+    //console.log(speed);
+    //if (speed) { //if the speed exists
+      //stateGame[roomName].players[client.number-1].speed = speed;
       //applying the speed to the correct room && player
-     }
+     //}
   }
 
   client.on("createNewRandomGame", handleCreateNewRandomGame);

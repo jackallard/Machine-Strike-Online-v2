@@ -42,7 +42,7 @@ function generateBoard(if_Randomise) {
   if (if_Randomise === "random") {
     for (i=0; i<gameBoard.length;i++){
       for (j=0; j<gameBoard.length;j++){
-        board[i][j] = getRandomInt(-2,4);
+        gameBoard[i][j] = getRandomInt(-2,4);
       }
     }
   }

@@ -39,6 +39,7 @@ function generateBoard(if_Randomise) {
     [0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0]
   ];
+  console.log(gameBoard[1,2]);
   if (if_Randomise === "random") {
     for (i=0; i<gameBoard.length;i++){
       for (j=0; j<gameBoard.length;j++){

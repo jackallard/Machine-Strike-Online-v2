@@ -96,7 +96,7 @@ io.on("connection", client => { //establishing the client object
 
     client.join(roomName);
     client.number = 1;
-    client.emit("initialisation", 1, roomName, JSON.stringify(state));
+    client.emit("initialisation", 1, roomName, JSON.stringify(stateGame));
   }
 
   function handleJoinNewGame(roomName) {

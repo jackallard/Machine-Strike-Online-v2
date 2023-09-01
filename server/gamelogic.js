@@ -28,7 +28,7 @@ function createStateGame(if_Randomise) {
 }
 
 function generateBoard(if_Randomise) {
-  console.log("starting board randomisation");
+  console.log("1");
   const gameBoard=[
     [0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0],

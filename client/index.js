@@ -133,6 +133,8 @@ function handleInitialisation(number, gameState) {
   isGameActive = true;
   mainDisplay.style.display = "none";
   gameDisplay.style.display = "block";
+  document.getElementById("gameDisplay").hidden=false;
+  document.getElementById("gameCanvas").hidden=false;
 
   document.addEventListener("keydown", keyDown);
 

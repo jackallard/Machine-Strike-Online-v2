@@ -59,6 +59,7 @@ else {
     }
   }
   }
+  console.log("logging gameBoard below:");
   console.log(gameBoard);
   return gameBoard;
 }

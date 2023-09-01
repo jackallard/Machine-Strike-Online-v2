@@ -140,7 +140,7 @@ io.on("connection", client => { //establishing the client object
     //startGameInterval(stateGame, roomName); //the game can now be started as both players are now in the room
                         //only the roomName
 
-    //all of these steps are similar to the creation of the room, however when joining
+    //all of these steps are similar to the creatxion of the room, however when joining
     //there are additional validations to be done.
   }
 });

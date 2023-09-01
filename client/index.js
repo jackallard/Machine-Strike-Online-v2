@@ -133,8 +133,9 @@ function handleInitialisation(number, gameState) {
   isGameActive = true;
   mainDisplay.style.display = "none";
   gameDisplay.style.display = "block";
-  document.getElementById("gameDisplay").hidden=false;
-  document.getElementById("gameCanvas").hidden=false;
+  //kept as a comment as added for (unsuccessful!) testing purposes
+  //document.getElementById("gameDisplay").hidden=false; 
+  //document.getElementById("gameCanvas").hidden=false;
 
   document.addEventListener("keydown", keyDown);
 
@@ -145,22 +146,6 @@ function handleInitialisation(number, gameState) {
 }
 
 //setting up the canvas and drawing the game board
-
-function getTerrainImageFromBoardNumber(numStr) {
-  number_To_Image = {
-    '-2': 'resources/chasm_tile.png',
-    '-1': 'resources/marsh_tile2.png',
-    '0': 'resources/grassland_tiles.png',
-    '1': 'resources/forest_tile.png',
-    '2': 'resources/hill_tile.png',
-    '3': 'resources/mountain_tile.png'
-  }
-
-  const myImage = new Image();
-  myImage.src = number_To_Image[numStr.toString()];
-  return myImage;
-}
-
 
 function drawBoard(canvas, ctx, gameState) {
   //clear canvas
@@ -183,6 +168,20 @@ function drawBoard(canvas, ctx, gameState) {
 
 }
 
+function getTerrainImageFromBoardNumber(numStr) {
+  number_To_Image = {
+    '-2': 'resources/chasm_tile.png',
+    '-1': 'resources/marsh_tile2.png',
+    '0': 'resources/grassland_tiles.png',
+    '1': 'resources/forest_tile.png',
+    '2': 'resources/hill_tile.png',
+    '3': 'resources/mountain_tile.png'
+  }
+
+  const myImage = new Image();
+  myImage.src = number_To_Image[numStr.toString()];
+  return myImage;
+}
 
 function handleStateGame(gameState) { //when it receives a new game state
   if (!isGameActive) {

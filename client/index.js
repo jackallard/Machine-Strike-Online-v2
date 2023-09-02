@@ -163,7 +163,7 @@ function drawBoard(canvas, ctx, gameState) {
   ctx.clearRect(0,0,w,h);
   for (let x=0; x<8; x++) {
     for (let y=0; y<8; y++) {
-      terrain_Image = getTerrainImageFromBoardNumber(board[x][y]);
+      terrain_Image = getTerrainImageFromBoardNumber(gameBoard[x][y]);
       ctx.drawImage(terrain_Image, x*tile_w, y*tile_h, tile_w, tile_h);
     }
   }

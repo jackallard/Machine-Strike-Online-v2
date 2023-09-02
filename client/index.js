@@ -124,8 +124,11 @@ function renderSnake(snakeState, pixelsPerSquare, snakeColour) { //rendering the
   }
 }
 
-function handleInitialisation(number, gameState) {
-  console.log(gameState.gameBoard[1,1]);
+function handleInitialisation(number, roomName, gameState) {
+  if (gameState === undefined) {
+    console.log("gamestate is undefined");
+  }
+  else {
   userNameDisplay.innerText = String(enterNickname.value);
   console.log("Handle initialisation received");
   playerNum = number;
@@ -143,6 +146,7 @@ function handleInitialisation(number, gameState) {
   ctx = canvas.getContext('2d');
 
   drawBoard(canvas, ctx, gameState);
+}
 }
 
 //setting up the canvas and drawing the game board

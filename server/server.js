@@ -160,8 +160,6 @@ function startGameInterval(stateGame, roomName) {
   }, move_Delay); //time between each refreshed frame
 }
 
-
-
 function emitStateGame(roomName, state) {
   io.sockets.in(roomName) //emit to all clients in the  room
   .emit("stateGame", JSON.stringify(state)); //the current state of the game

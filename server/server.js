@@ -145,20 +145,20 @@ io.on("connection", client => { //establishing the client object
   }
 });
 
-function startGameInterval(stateGame, roomName) {
-  const loopId = setInterval(() => {
-    const isGameOver = loopGame(stateGame[roomName]); //checking the game is still ongoing
-
-    if (!isGameOver) {
-      emitStateGame(roomName, stateGame[roomName]);
-    } else {
-      emitFinishGame(roomName, isGameOver, stateGame[roomName], roomName);
-       //clear the room state when a game is over
-      clearInterval(loopId);
-
-    }
-  }, move_Delay); //time between each refreshed frame
-}
+//function startGameInterval(stateGame, roomName) {
+//  const loopId = setInterval(() => {
+//    const isGameOver = loopGame(stateGame[roomName]); //checking the game is still ongoing
+//
+//    if (!isGameOver) {
+//      emitStateGame(roomName, stateGame[roomName]);
+//    } else {
+//      emitFinishGame(roomName, isGameOver, stateGame[roomName], roomName);
+//       //clear the room state when a game is over
+//      clearInterval(loopId);
+//
+//    }
+//  }, move_Delay); //time between each refreshed frame
+// }
 
 function emitStateGame(roomName, state) {
   io.sockets.in(roomName) //emit to all clients in the  room

@@ -115,14 +115,14 @@ function renderGame(state) { //painting the game state
   renderSnake(state.players[1], pixelsPerSquare, snakeColour2);
 }
 
-function renderSnake(snakeState, pixelsPerSquare, snakeColour) { //rendering the player position function
-  const snakeArray = snakeState.snakeArray;
-
-  ctx.fillStyle = snakeColour;
-  for (let cell of snakeArray) { //looping through for each square of the snake
-    ctx.fillRect(cell.x * pixelsPerSquare, cell.y * pixelsPerSquare, pixelsPerSquare, pixelsPerSquare);
-  }
-}
+//function renderSnake(snakeState, pixelsPerSquare, snakeColour) { //rendering the player position function
+//  const snakeArray = snakeState.snakeArray;
+//
+//  ctx.fillStyle = snakeColour;
+//  for (let cell of snakeArray) { //looping through for each square of the snake
+//    ctx.fillRect(cell.x * pixelsPerSquare, cell.y * pixelsPerSquare, pixelsPerSquare, pixelsPerSquare);
+//  }
+//}
 
 function handleInitialisation(number, roomName, gameState) {
   if (gameState === undefined) {

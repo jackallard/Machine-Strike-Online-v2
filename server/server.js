@@ -75,7 +75,7 @@ io.on("connection", client => { //establishing the client object
 
     client.join(roomName);
     client.number = 1;
-    client.emit("initialisation", 1, roomName, "stateGame", JSON.stringify(stateGame));
+    client.emit("initialisation", 1, roomName, JSON.stringify(stateGame));
     console.log("emitted to client to start init");
   }
 

@@ -175,7 +175,7 @@ function drawBoard(canvas, ctx, gameState) {
 function getTerrainImageFromBoardNumber(numStr) {
   number_To_Image = {
     '-2': './resources/chasm_tile.png',
-    '-1': './resources/marsh_tile2.png',
+    '-1': './resources/marsh_tile.png',
     '0': './resources/grassland_tiles.png',
     '1': './resources/forest_tile.png',
     '2': './resources/hill_tile.png',

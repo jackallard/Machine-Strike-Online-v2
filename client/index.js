@@ -179,7 +179,7 @@ function drawBoard(canvas, ctx, gameState) {
       },
       false,
     );
-    myImage.src = number_To_Image[numStr.toString()];
+    myImage.src = number_To_Image[board[x][y].toString()];
     console.log("cell assigned to:" + myImage.src);
     ctx.drawImage(terrain_Image, x*tile_w, y*tile_h, tile_w, tile_h);
     }

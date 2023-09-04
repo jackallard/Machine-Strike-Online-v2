@@ -183,6 +183,13 @@ function getTerrainImageFromBoardNumber(numStr) {
   }
 
   const myImage = new Image();
+  myImage.addEventListener(
+    "load",
+    () => {
+      console.log("image cell loaded");
+    },
+    false,
+  );
   myImage.src = number_To_Image[numStr.toString()];
   return myImage;
 }

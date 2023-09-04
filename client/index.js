@@ -159,7 +159,7 @@ function drawBoard(canvas, ctx, gameState) {
   w = canvas.width;
   h = canvas.height;
   tile_w = w/8;
-  h = canvas.height;
+  tile_h = h/8;
   ctx.clearRect(0,0,w,h);
   for (let x=0; x<8; x++) {
     for (let y=0; y<8; y++) {

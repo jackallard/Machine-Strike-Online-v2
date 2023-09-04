@@ -184,7 +184,7 @@ function getTerrainImageFromBoardNumber(numStr) {
 
   const myImage = new Image();
   myImage.src = number_To_Image[numStr.toString()];
-  return myImage;
+  return myImage.src;
 }
 
 function handleStateGame(gameState) { //when it receives a new game state

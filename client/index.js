@@ -176,12 +176,12 @@ function drawBoard(canvas, ctx, gameState) {
       terrain_Image.addEventListener("load",
       () => {
       console.log("image cell loaded of type");
+      ctx.drawImage(terrain_Image, x*tile_w, y*tile_h, tile_w, tile_h);
       },
       false,
     );
     terrain_Image.src = number_To_Image[board[x][y].toString()];
     console.log("cell assigned to:" + terrain_Image.src);
-    ctx.drawImage(terrain_Image, x*tile_w, y*tile_h, tile_w, tile_h);
     }
   }
   //draw the grid lines if wanted

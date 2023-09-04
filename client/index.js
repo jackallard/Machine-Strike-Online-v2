@@ -174,12 +174,12 @@ function drawBoard(canvas, ctx, gameState) {
 
 function getTerrainImageFromBoardNumber(numStr) {
   number_To_Image = {
-    '-2': 'resources/chasm_tile.png',
-    '-1': 'resources/marsh_tile2.png',
-    '0': 'resources/grassland_tiles.png',
-    '1': 'resources/forest_tile.png',
-    '2': 'resources/hill_tile.png',
-    '3': 'resources/mountain_tile.png'
+    '-2': './resources/chasm_tile.png',
+    '-1': './resources/marsh_tile2.png',
+    '0': './resources/grassland_tiles.png',
+    '1': './resources/forest_tile.png',
+    '2': './resources/hill_tile.png',
+    '3': './resources/mountain_tile.png'
   }
 
   const myImage = new Image();

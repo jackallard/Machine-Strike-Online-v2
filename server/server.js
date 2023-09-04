@@ -75,7 +75,7 @@ io.on("connection", client => { //establishing the client object
 
     client.join(roomName);
     client.number = 1;
-    client.emit("initialisation", 1, roomName, JSON.stringify(stateGame));
+    client.emit("initialisation", 1, roomName, stateGame[roomName]);
     console.log("emitted to client to start init");
   }
 
@@ -96,7 +96,7 @@ io.on("connection", client => { //establishing the client object
 
     client.join(roomName);
     client.number = 1;
-    client.emit("initialisation", 1, roomName, JSON.stringify(stateGame));
+    client.emit("initialisation", 1, roomName, stateGame[roomName]);
   }
 
   function handleJoinNewGame(roomName) {
@@ -134,7 +134,7 @@ io.on("connection", client => { //establishing the client object
     client.join(roomName);
     client.number = 2;
     //io.sockets.in(roomName).emit("board", JSON.stringify(state));
-    client.emit("initialisation", 2, roomName, stateGame);
+    client.emit("initialisation", 2, roomName, stateGame[roomName]);
     console.log(room);
 
     //startGameInterval(stateGame, roomName); //the game can now be started as both players are now in the room

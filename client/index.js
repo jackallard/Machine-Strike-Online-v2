@@ -155,6 +155,15 @@ function drawBoard(canvas, ctx, gameState) {
   //clear canvas
   //2d for loop
 
+  number_To_Image = {
+    '-2': 'resources/chasm_tile.png',
+    '-1': 'resources/marsh_tile.png',
+    '0': 'resources/grassland_tiles.png',
+    '1': 'resources/forest_tile.png',
+    '2': 'resources/hill_tile.png',
+    '3': 'resources/mountain_tile.png'
+  }
+
   board = gameState.gameBoard;
   w = canvas.width;
   h = canvas.height;
@@ -163,8 +172,16 @@ function drawBoard(canvas, ctx, gameState) {
   ctx.clearRect(0,0,w,h);
   for (let x=0; x<8; x++) {
     for (let y=0; y<8; y++) {
-      terrain_Image = getTerrainImageFromBoardNumber(board[x][y]);
-      ctx.drawImage(terrain_Image, x*tile_w, y*tile_h, tile_w, tile_h);
+      const myImage = new Image();
+      myImage.addEventListener("load",
+      () => {
+      console.log("image cell loaded of type");
+      },
+      false,
+    );
+    myImage.src = number_To_Image[numStr.toString()];
+    console.log("cell assigned to:" + myImage.src);
+    ctx.drawImage(terrain_Image, x*tile_w, y*tile_h, tile_w, tile_h);
     }
   }
   //draw the grid lines if wanted
@@ -191,7 +208,7 @@ function getTerrainImageFromBoardNumber(numStr) {
     false,
   );
   myImage.src = number_To_Image[numStr.toString()];
-  console.log("cell assigned to image" + myImage.src);
+  console.log("cell assigned to:" + myImage.src);
   return myImage;
 }
 

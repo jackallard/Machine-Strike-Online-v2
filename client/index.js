@@ -144,8 +144,6 @@ function handleInitialisation(number, roomName, gameState) {
 
   canvas = document.getElementById('gameCanvas'); //using the ID to link to the html
   ctx = canvas.getContext('2d');
-  canvas.width = mainDisplay.width*0.5;
-  canvas.height = mainDisplay.height*0.5;
   drawBoard(canvas, ctx, gameState);
   }
 }
@@ -190,28 +188,28 @@ function drawBoard(canvas, ctx, gameState) {
 
 }
 
-function getTerrainImageFromBoardNumber(numStr) {
-  number_To_Image = {
-    '-2': './resources/chasm_tile.png',
-    '-1': './resources/marsh_tile.png',
-    '0': './resources/grassland_tiles.png',
-    '1': 'resources/forest_tile.png',
-    '2': 'resources/hill_tile.png',
-    '3': 'resources/mountain_tile.png'
-  }
+// function getTerrainImageFromBoardNumber(numStr) {
+//   number_To_Image = {
+//     '-2': './resources/chasm_tile.png',
+//     '-1': './resources/marsh_tile.png',
+//     '0': './resources/grassland_tiles.png',
+//     '1': 'resources/forest_tile.png',
+//     '2': 'resources/hill_tile.png',
+//     '3': 'resources/mountain_tile.png'
+//   }
 
-  const myImage = new Image();
-  myImage.addEventListener(
-    "load",
-    () => {
-      console.log("image cell loaded of type");
-    },
-    false,
-  );
-  myImage.src = number_To_Image[numStr.toString()];
-  console.log("cell assigned to:" + myImage.src);
-  return myImage;
-}
+//   const myImage = new Image();
+//   myImage.addEventListener(
+//     "load",
+//     () => {
+//       console.log("image cell loaded of type");
+//     },
+//     false,
+//   );
+//   myImage.src = number_To_Image[numStr.toString()];
+//   console.log("cell assigned to:" + myImage.src);
+//   return myImage;
+// }
 
 function handleStateGame(gameState) { //when it receives a new game state
   if (!isGameActive) {

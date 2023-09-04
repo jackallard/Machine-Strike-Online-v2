@@ -186,11 +186,12 @@ function getTerrainImageFromBoardNumber(numStr) {
   myImage.addEventListener(
     "load",
     () => {
-      console.log("image cell loaded");
+      console.log("image cell loaded of type");
     },
     false,
   );
   myImage.src = number_To_Image[numStr.toString()];
+  console.log("cell assigned to image" + myImage.src);
   return myImage;
 }
 

@@ -172,14 +172,14 @@ function drawBoard(canvas, ctx, gameState) {
   ctx.clearRect(0,0,w,h);
   for (let x=0; x<8; x++) {
     for (let y=0; y<8; y++) {
-      const myImage = new Image();
-      myImage.addEventListener("load",
+      const terrain_Image = new Image();
+      terrain_Image.addEventListener("load",
       () => {
       console.log("image cell loaded of type");
       },
       false,
     );
-    myImage.src = number_To_Image[board[x][y].toString()];
+    terrain_Image.src = number_To_Image[board[x][y].toString()];
     console.log("cell assigned to:" + myImage.src);
     ctx.drawImage(terrain_Image, x*tile_w, y*tile_h, tile_w, tile_h);
     }

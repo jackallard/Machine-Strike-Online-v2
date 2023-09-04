@@ -144,7 +144,8 @@ function handleInitialisation(number, roomName, gameState) {
 
   canvas = document.getElementById('gameCanvas'); //using the ID to link to the html
   ctx = canvas.getContext('2d');
-
+  canvas.width = mainDisplay.width*0.5;
+  canvas.height = mainDisplay.height*0.5;
   drawBoard(canvas, ctx, gameState);
   }
 }
@@ -165,8 +166,8 @@ function drawBoard(canvas, ctx, gameState) {
   }
 
   board = gameState.gameBoard;
-  w = 1000;
-  h = 1000;
+  w = canvas.width;
+  h = canvas.height;
   tile_w = w/8;
   tile_h = h/8;
   ctx.clearRect(0,0,w,h);

@@ -180,6 +180,7 @@ function drawBoard(canvas, ctx, gameState) {
       false,
     );
     terrain_Image.src = number_To_Image[board[x][y].toString()];
+    terrain_Image.style.imageRendering = high-quality;
     console.log("cell assigned to:" + terrain_Image.src);
     }
   }

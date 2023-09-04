@@ -165,8 +165,8 @@ function drawBoard(canvas, ctx, gameState) {
   }
 
   board = gameState.gameBoard;
-  w = canvas.width;
-  h = canvas.height;
+  w = 1000;
+  h = 1000;
   tile_w = w/8;
   tile_h = h/8;
   ctx.clearRect(0,0,w,h);

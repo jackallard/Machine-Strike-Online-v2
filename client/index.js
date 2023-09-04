@@ -90,30 +90,30 @@ function keyDown(keyStroke) { //input keypresses to the server
   socket.emit("keyDown", keyStroke.code)
 }
 
-function renderGame(state) { //painting the game state
-  ctx.fillStyle = gridColour;
-  ctx.fillRect(0, 0, gameCanvas.width, gameCanvas.height);
+// function renderGame(state) { //painting the game state
+//   ctx.fillStyle = gridColour;
+//   ctx.fillRect(0, 0, gameCanvas.width, gameCanvas.height);
 
-  const foodPos1 = state.foodPos1;
-  const foodPos2 = state.foodPos2;
-  const abilityPos = state.abilityPos;
-  const gridSize = state.gridSize;
-  const pixelsPerSquare = 800 / gridSize; //pixels to render one square
+//   const foodPos1 = state.foodPos1;
+//   const foodPos2 = state.foodPos2;
+//   const abilityPos = state.abilityPos;
+//   const gridSize = state.gridSize;
+//   const pixelsPerSquare = 800 / gridSize; //pixels to render one square
 
-  //food #1
-  ctx.fillStyle = foodColour; //rendering the food square
-  ctx.fillRect(foodPos1.x * pixelsPerSquare, foodPos1.y * pixelsPerSquare, pixelsPerSquare, pixelsPerSquare);
+//   //food #1
+//   ctx.fillStyle = foodColour; //rendering the food square
+//   ctx.fillRect(foodPos1.x * pixelsPerSquare, foodPos1.y * pixelsPerSquare, pixelsPerSquare, pixelsPerSquare);
 
-  //food #2
-  ctx.fillStyle = foodColour;
-  ctx.fillRect(foodPos2.x * pixelsPerSquare, foodPos2.y * pixelsPerSquare, pixelsPerSquare, pixelsPerSquare);
+//   //food #2
+//   ctx.fillStyle = foodColour;
+//   ctx.fillRect(foodPos2.x * pixelsPerSquare, foodPos2.y * pixelsPerSquare, pixelsPerSquare, pixelsPerSquare);
 
-  ctx.fillStyle = abilityColour; //rendering the bonus ability square
-  ctx.fillRect(abilityPos.x * pixelsPerSquare, abilityPos.y * pixelsPerSquare, pixelsPerSquare, pixelsPerSquare);
+//   ctx.fillStyle = abilityColour; //rendering the bonus ability square
+//   ctx.fillRect(abilityPos.x * pixelsPerSquare, abilityPos.y * pixelsPerSquare, pixelsPerSquare, pixelsPerSquare);
 
-  renderSnake(state.players[0], pixelsPerSquare, snakeColour1); //rendering the player position
-  renderSnake(state.players[1], pixelsPerSquare, snakeColour2);
-}
+//   renderSnake(state.players[0], pixelsPerSquare, snakeColour1); //rendering the player position
+//   renderSnake(state.players[1], pixelsPerSquare, snakeColour2);
+// }
 
 //function renderSnake(snakeState, pixelsPerSquare, snakeColour) { //rendering the player position function
 //  const snakeArray = snakeState.snakeArray;
@@ -146,7 +146,7 @@ function handleInitialisation(number, roomName, gameState) {
   ctx = canvas.getContext('2d');
 
   drawBoard(canvas, ctx, gameState);
-}
+  }
 }
 
 //setting up the canvas and drawing the game board
@@ -177,9 +177,9 @@ function getTerrainImageFromBoardNumber(numStr) {
     '-2': './resources/chasm_tile.png',
     '-1': './resources/marsh_tile.png',
     '0': './resources/grassland_tiles.png',
-    '1': './resources/forest_tile.png',
-    '2': './resources/hill_tile.png',
-    '3': './resources/mountain_tile.png'
+    '1': 'resources/forest_tile.png',
+    '2': 'resources/hill_tile.png',
+    '3': 'resources/mountain_tile.png'
   }
 
   const myImage = new Image();

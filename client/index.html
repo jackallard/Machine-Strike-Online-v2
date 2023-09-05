@@ -9,7 +9,7 @@
 
 <style>
 #html {
-  background: url('../resources/hfwbackground2.jpg') no-repeat center center fixed;
+  background: url('/resources/hfwbackground2.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -102,6 +102,7 @@
     <div class="container h-100">
       <div class="slider-wrapper">
         <div class="slider">
+          <span class="close">&times;</span>
           <img id="tutorial_1" src="/resources/tutorials/tutorial_1.jpg" />
           <img id="tutorial_2" src="/resources/tutorials/tutorial_2.jpg" />
           <img id="tutorial_3" src="/resources/tutorials/tutorial_3.jpg" />
@@ -175,9 +176,9 @@
               <button onclick="confirmSymmetrical()">Symmetrical</button>
               </button>
             </div>
-            <div> Customise: </div>
-          <button id="changeColourButton">
-            Change Colour
+            <div> Read The Tutorial Here: </div>
+          <button id="openTutorial">
+            Rules of Machine Strike
           </button>
 
         </div>
@@ -201,18 +202,30 @@
   <script src="https://nodejs.org/api/fs.html"></script>
 
    <script>
-    var colours = ["red", "blue", "green"];
-    var colourIndex = 0;
+    // var colours = ["red", "blue", "green"];
+    // var colourIndex = 0;
 
-    function changeColour() {
-      var col = document.getElementById("body");
-      if (colourIndex >= colours.length) {
-        colourIndex = 0;
-      }
-      col.style.backgroundColor = colours[colourIndex];
-      colourIndex++;
+    // function changeColour() {
+    //   var col = document.getElementById("body");
+    //   if (colourIndex >= colours.length) {
+    //     colourIndex = 0;
+    //   }
+    //   col.style.backgroundColor = colours[colourIndex];
+    //   colourIndex++;
+    // }
+    document.getElementById("slider-wrapper").hidden=true;
+
+    span.onclick = function() {
+      'slider-wrapper'.style.display = "block";
     }
-    </script>
+
+    window.onclick = function(event) {
+      if (event.target == slider-wrapper) {
+        'slider-wrapper'.style.display = "none";
+      }
+    }
+
+</script>
 
 </body>
 </html>

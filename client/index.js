@@ -1,12 +1,13 @@
 const gameDisplay = document.getElementById('gameDisplay'); //retrieving the relevant elements from the html
 const col = document.body;
-const changeColourButton = document.getElementById("changeColourButton");
+const openTutorial = document.getElementById("openTutorial");
 const newGameButton = document.getElementById("newGameButton");
 const joinGameButton = document.getElementById("joinGameButton");
 const gameCodeInput = document.getElementById("gameCodeInput");
 const roomCodeDisplay = document.getElementById("roomCodeDisplay");
 const userNameDisplay = document.getElementById("userNameDisplay");
 const nickNameInput = document.getElementById("enterNickname");
+const mainDisplay = document.getElementById("mainDisplay");
 
 let userBoardChoice;
 
@@ -62,14 +63,11 @@ var colours = [backgroundColour1, backgroundColour2, backgroundColour3,
   backgroundColour4, backgroundColour5, backgroundColour6];
 var colourIndex = 0;
 
-changeColourButton.addEventListener("click", () => {
+openTutorial.addEventListener("click", () => {
+  mainDisplay.hidden=true;
+  openTutorial.hidden=false;
 
-  if (colourIndex >= colours.length) {
-    colourIndex = 0;
-  }
-  col.style.backgroundColor = colours[colourIndex];
-  colourIndex++;
-});
+  });
 
 const socket = io('https://intense-scrubland-55179-e71a97bf4b44.herokuapp.com/'); //using socket.io via heroku
 

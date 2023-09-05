@@ -49,6 +49,7 @@
 }
 
 .slider-wrapper {
+  display: none;
   position: relative;
   max-width: 48rem;
   margin: 0 auto;
@@ -215,14 +216,14 @@
     // }
    
 var span=document.getElementsByClassName("close")[0];
-var slider=document.getElementById("slider");
+var sliderW=document.getElementsByClassName("slider");
 
-slider.style.hidden=true;
+
 
 span.onclick = closeTutorial();
 
     function showTutorial() {
-      slider.style.hidden = false;
+      sliderW.style.display = 'block';
     }
 
     function closeTutorial() {

@@ -177,7 +177,7 @@
               </button>
             </div>
             <div> Read The Tutorial Here: </div>
-          <button id="openTutorial">
+          <button id="openTutorial" onclick="showTutorial()">
             Rules of Machine Strike
           </button>
 
@@ -215,14 +215,17 @@
     // }
     document.getElementById("slider-wrapper").hidden=true;
 
-    span.onclick = function() {
-      'slider-wrapper'.style.display = "block";
+var span=document.getElementsByClassName("close")[0];
+var slider_W=document.getElementsByClassName("slider-wrapper");
+
+span.onclick = closeTutorial();
+
+    function showTutorial() {
+      slider_W.style.hidden = false;
     }
 
-    window.onclick = function(event) {
-      if (event.target == slider-wrapper) {
-        'slider-wrapper'.style.display = "none";
-      }
+    function closeTutorial() {
+      slider_W.style.hidden = true;
     }
 
 </script>

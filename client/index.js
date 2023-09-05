@@ -63,11 +63,11 @@ var colours = [backgroundColour1, backgroundColour2, backgroundColour3,
   backgroundColour4, backgroundColour5, backgroundColour6];
 var colourIndex = 0;
 
-openTutorial.addEventListener("click", () => {
-  mainDisplay.hidden=true;
-  openTutorial.hidden=false;
+// openTutorial.addEventListener("click", () => {
+//   mainDisplay.hidden=true;
+//   openTutorial.hidden=false;
 
-  });
+//   });
 
 const socket = io('https://intense-scrubland-55179-e71a97bf4b44.herokuapp.com/'); //using socket.io via heroku
 

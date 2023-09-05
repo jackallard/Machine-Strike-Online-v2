@@ -48,6 +48,51 @@
   width: 80%;
 }
 
+.slider-wrapper {
+  position: relative;
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+.slider {
+  display: flex;
+  aspect-ratio: 16 / 9;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  box-shadow: 0 1.5rem 3rem -0.75rem hsla(0,0%, 0%, 0.25);
+  border-radius: 0.5rem;
+}
+
+.slider img {
+  flex: 1 0 100%;
+  scroll-snap-align: start;
+  object-fit: cover;
+}
+
+.slider-nav {
+  display: flex;
+  column-gap: 1rem;
+  position: absolute;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  }
+
+.slider-nav a {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: #fff;
+  opacity: 0.75;
+  transition: opacity ease 250ms;
+}
+
+.slider-nav a:hover {
+  opacity: 1;
+}
+
 </style>
 
 </head>
@@ -55,7 +100,36 @@
   <body id="body">
   <section class="vh-100">
     <div class="container h-100">
-      <section >
+      <div class="slider-wrapper">
+        <div class="slider">
+          <img id="tutorial_1" src="/resources/tutorials/tutorial_1.jpg" />
+          <img id="tutorial_2" src="/resources/tutorials/tutorial_2.jpg" />
+          <img id="tutorial_3" src="/resources/tutorials/tutorial_3.jpg" />
+          <img id="tutorial_4" src="/resources/tutorials/tutorial_4.jpg" />
+          <img id="tutorial_5" src="/resources/tutorials/tutorial_5.jpg" />
+          <img id="tutorial_6" src="/resources/tutorials/tutorial_6.jpg" />
+          <img id="tutorial_7" src="/resources/tutorials/tutorial_7.jpg" />
+          <img id="tutorial_8" src="/resources/tutorials/tutorial_8.jpg" />
+          <img id="tutorial_9" src="/resources/tutorials/tutorial_9.jpg" />
+          <img id="tutorial_10" src="/resources/tutorials/tutorial_10.jpg" />
+          <img id="tutorial_11" src="/resources/tutorials/tutorial_11.jpg" />
+          <img id="tutorial_12" src="/resources/tutorials/tutorial_12.jpg" />
+        </div>
+        <div class="slider-nav">
+          <a href="#tutorial_1"></a>
+          <a href="#tutorial_2"></a>
+          <a href="#tutorial_3"></a>
+          <a href="#tutorial_4"></a>
+          <a href="#tutorial_5"></a>
+          <a href="#tutorial_6"></a>
+          <a href="#tutorial_7"></a>
+          <a href="#tutorial_8"></a>
+          <a href="#tutorial_9"></a>
+          <a href="#tutorial_10"></a>
+          <a href="#tutorial_11"></a>
+          <a href="#tutorial_12"></a>
+        </div>
+      </div>
       <div id="mainDisplay" class="h-100">
         <div class = "d-flex flex-column aligh-items-center justify-content-center h-100 w-100">
           <!-- <video autoplay muted loop id="menuVideo">

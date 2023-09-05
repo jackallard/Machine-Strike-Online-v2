@@ -217,13 +217,12 @@
 var span=document.getElementsByClassName("close")[0];
 var sliderW=document.getElementsByClassName("slider");
 
-sliderW.hidden = true;
-
-span.onclick = closeTutorial();
+sliderW.style.display = none;
 
     function showTutorial() {
       sliderW.style.display = block;
       mainDisplay.style.hidden=true;
+      span.onclick = closeTutorial();
     }
 
     function closeTutorial() {

@@ -215,8 +215,8 @@
     //   colourIndex++;
     // }
    
-var span=document.getElementById("close");
-var sliderW=document.getElementById("slider-wrapper");
+var span=document.getElementByClassName("close")[0];
+var sliderW=document.getElementsByClassName("slider-wrapper")[0];
 
     function showTutorial() {
       sliderW.style.display = "block";

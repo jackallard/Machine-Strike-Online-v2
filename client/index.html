@@ -219,14 +219,14 @@ var span=document.getElementsByClassName("close")[0];
 var sliderW=document.getElementsByClassName("slider");
 
     function showTutorial() {
-      sliderW.style.display = block;
-      mainDisplay.style.display = none;
+      sliderW.style.display = 'block';
+      mainDisplay.style.display = 'none';
       span.onclick = closeTutorial();
     }
 
     function closeTutorial() {
-      sliderW.style.hidden = true;
-      mainDisplay.style.hidden=false;
+      sliderW.style.display = 'none';
+      mainDisplay.style.display = 'block';
     }
 
 </script>
